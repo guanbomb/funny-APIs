@@ -1,0 +1,90 @@
+.bilibili-card {
+	font: 400 1em/1.8 Avenir,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+	padding: 8px 8px 0;
+	background: #fff;
+	color: #555;
+	position: relative;
+	width: 380px;
+	height: 151px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	border-color: #eee #ddd #bbb;
+	box-shadow: rgba(0,0,0,.14) 0 1px 3px;
+	margin:auto;
+}
+.bilibili-card a {
+	text-decoration: none;
+	color: #646464;
+	outline: 0;
+}
+.user-card .header {
+	padding: 3px 0 4px 57px;
+	min-height: 48px;
+}
+.user-card ul {
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #707070;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	zoom: 1;
+}
+.user-card .status li {
+	float: left;
+	padding: 4px 18px;
+	border-left: 1px solid #eee;
+}
+.user-card .status li:first-child {
+	border-left: 0;
+	padding-left: 0;
+}
+.user-card img {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+	width: 48px;
+	height: 48px;
+	background: #fff;
+	border-radius: 4px;
+}
+.user-card strong {
+	display: block;
+	color: #292f33;
+	font-size: 16px;
+	line-height: 1.6;
+}
+.user-card .status a {
+	color: #707070;
+	text-decoration: none;
+}
+.user-card .footer {
+	font-size: 12px;
+	font-weight: 700;
+	color: #646464;
+}
+.user-card ul{
+	display: inline-block;
+	clear: both;
+	width: 100%;
+}
+.bilibili-card .button {
+	position: absolute;
+	top: 10px;
+	right: 14px;
+	padding: 4px 8px 4px 7px;
+	color: #555;
+	text-shadow: 0 1px 0 #fff;
+	border: 1px solid #d4d4d4;
+	border-radius: 3px;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 14px;
+	background-color: #e6e6e6;
+	background-image: -webkit-linear-gradient(#fafafa,#eaeaea);
+	background-image: -moz-linear-gradient(#fafafa,#eaeaea);
+	background-image: -ms-linear-gradient(#fafafa,#eaeaea);
+	background-image: linear-gradient(#fafafa,#eaeaea);
+}
