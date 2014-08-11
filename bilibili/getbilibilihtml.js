@@ -1,8 +1,7 @@
-function val(obj){return document.getElementById(obj)};
+function val(obj){return document.getElementsByName(obj)};
 var obj = val("bilibili_card");
-if(obj&&obj.getAttribute('uid')){
-
-	url = obj.getAttribute('uid')
+if(obj.length>0){
+	var j = 0;	
 	//ajax请求是跨域的，不可行！
 	// var XMLHttpReq;  
 	// function createXMLHttpRequest() {  
@@ -33,12 +32,17 @@ if(obj&&obj.getAttribute('uid')){
 	// 	}
 	// }
 	// sendAjaxRequest("http://uquweb.com/api/bilibili/getbilibilihtml.php",obj.getAttribute('uid'))
-		document.write("<script src=\"http://uquweb.com/api/bilibili/getbilibilihtml.php?uid="+obj.getAttribute('uid')+"\"></script>");
+	for(var i = 0;i < obj.length;i ++){
+		url = obj[i].getAttribute('uid')
+		document.write("<script src=\"http://uquweb.com/api/bilibili/getbilibilihtml.php?uid="+obj[i].getAttribute('uid')+"\"></script>");
+	}
 }
 else{
 	alert("哔哩哔哩模块出错！请检查代码");
 }
 function ShowCard(json){
 	var name="<div class=\"bilibili-card user-card\"><div class=\"header\"><a class=\"avatar\" href=\"http://space.bilibili.tv/"+json.mid+"/info.html\" target=\"_top\"><img src=\""+json.face+"\"><strong>"+json.name+"</strong><span>"+json.place+"</span></a><a class=\"button\" href=\"http://space.bilibili.tv/"+json.mid+"\" target=\"_top\">进入Ta的空间</a></div><ul class=\"status\"><li><a href=\"http://space.bilibili.com/"+json.mid+"/fans.html\" target=\"_top\"><strong>"+json.fans+"</strong>粉丝</a></li><li><a href=\"http://space.bilibili.com/"+json.mid+"/follow.html\" target=\"_top\"><strong>"+json.attention+"</strong>关注</a></li><li><a href=\"http://space.bilibili.com/"+json.mid+"\" target=\"_top\"><strong>"+json.article+"</strong>投稿</a></li></ul><div class=\"footer\"><a href=\"http://www.bilibili.tv\" target=\"_top\">Move to BiliBili.</a>&nbsp;&nbsp;&nbsp;Powered By <a href=\"http://uquweb.com\">Younger</a></div></div>";
-	obj.innerHTML=name+"<link rel=\"stylesheet\" type=\"text/css\" href=\"http://uquweb.com/api/bilibili/bilibilicard.css\">";
+	obj[j].innerHTML=name;
+	document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"http://uquweb.com/api/bilibili/bilibilicard.css\">");
+	if(j < obj.length)j++;
 }
