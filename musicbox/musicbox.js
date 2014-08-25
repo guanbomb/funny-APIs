@@ -1,6 +1,8 @@
 var playList = [];
 var lNumNow = 0, sNumNow = 0;
 var interval;
+var img0 = "url(http://timehub.cn/api/musicbox/button.png) 0px 0px";
+var img1 = "url(http://timehub.cn/api/musicbox/button.png) 62px 0px";
 (function() {
 	function val(obj) {return document.getElementsByName(obj)};
 	var listobj = val("musicbox");
@@ -18,7 +20,7 @@ var interval;
 			listobj[i].innerHTML = "<div class=\"player_inc\"><div class=\"player_inner\"><span class=\"song_name\" id=\"song_name"+i+"\">"+playList[i][0][0]+" "+ playList[i][0][2] + "</span><span id=\"currentTime"+i+"\">00:00</span>/<span id=\"allTime"+i+"\">--:--</span><span onclick=\"play("+i+",-1)\" id=\"play"+i+"\" class=\"play_btn\"></span><span onclick=\"showlist("+i+")\" class=\"list_btn\"></span></div><div class=\"playlist\" id=\"playlist"+i+"\">" + listhtml + "</div></div>";
 		}
 	}
-	document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"musicbox.css\">");
+	document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"http://timehub.cn/api/musicbox/musicbox.css\">");
 })();
 
 //creat a audio dom
@@ -38,7 +40,7 @@ function play(lNum, sNum) {
 		if(!mplayer.src) {
 			mplayer.src = playList[lNum][0][1];
 			mplayer.play();
-			val("play"+lNum).style.background = "url(button.png) 0px 0px";
+			val("play"+lNum).style.background = img0;
 			lNumNow = lNum;
 			//播放下一首
 			mplayer.onended = function() {
@@ -46,18 +48,18 @@ function play(lNum, sNum) {
 				else sNumNow = 0;
 				this.src = playList[lNumNow][sNumNow][1];
 				this.play();
-				val("song_name"+lNum).innerHTML = playList[lNum][sNum][0]+ " " + playList[lNum][0][2];
+				val("song_name"+lNumNow).innerHTML = playList[lNumNow][sNumNow][0]+ " " + playList[lNumNow][sNumNow][2];
 			}
 			mplayer.loadeddata = timeListener();
 		} else if(lNumNow != lNum) {
 			changeSong(lNum, sNum);
 		} else {
 			if(mplayer.paused) {
-				val("play"+lNumNow).style.background = "url(button.png) 0px 0px";
+				val("play"+lNumNow).style.background = img0;
 				mplayer.play();
 			}
 			else {
-				val("play"+lNumNow).style.background = "url(button.png) 62px 0px";
+				val("play"+lNumNow).style.background = img1;
 				mplayer.pause();
 			}
 		}
@@ -73,8 +75,8 @@ function changeSong(lNum, sNum) {
 	mplayer.src = playList[lNum][sNum][1];
 	mplayer.play();
 	val("song_name"+lNum).innerHTML = playList[lNum][sNum][0]+ " " + playList[lNum][sNum][2];
-	val("play"+lNumNow).style.background = "url(button.png) 62px 0px";
-	val("play"+lNum).style.background = "url(button.png) 0px 0px";
+	val("play"+lNumNow).style.background = img1;
+	val("play"+lNum).style.background = img0;
 	lNumNow = lNum;
 	sNumNow = sNum;
 }
