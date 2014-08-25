@@ -3,11 +3,15 @@
 	margin: 20px 0;
 }
 .player_inc{
-	width: 360px;
+	max-width: 300px;
 	margin: auto;
 }
 .player_inner{
-	display: flex;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 	padding: 0 8px;
 	line-height: 30px;
 	color: #555;
@@ -37,18 +41,19 @@
 	line-height: 25px;
 }
 .song_name {
-	width: 220px;
+	width: 50%;
 	text-overflow:ellipsis;
     white-space:nowrap;
     overflow:hidden;
 }
 .play_btn{
 	cursor: pointer;
-	width: 30px;
 	background: url(button.png) 62px 0px;
 }
 .list_btn{
 	cursor: pointer;
-	width: 30px;
 	background: url(button.png) 30px 0px;
+}
+.thisTime,.play_btn,.list_btn{
+	width: 10%;
 }
