@@ -17,7 +17,7 @@ var img1 = "url(http://timehub.cn/api/musicbox/button.png) 62px 0px";
 				listhtml = "<a onclick=\"play(" + i + "," + j + ")\">" + playList[i][j][0] + "-" + playList[i][j][2] + "</a>" + listhtml;
 			}
 			//change dom
-			listobj[i].innerHTML = "<div class=\"player_inc\"><div class=\"player_inner\"><span class=\"song_name\" id=\"song_name"+i+"\">"+playList[i][0][0]+" "+ playList[i][0][2] + "</span><span class=\"thisTime\" id=\"currentTime"+i+"\">00:00</span>/<span class=\"thisTime\" id=\"allTime"+i+"\">--:--</span><span onclick=\"play("+i+",-1)\" id=\"play"+i+"\" class=\"play_btn\"></span><span onclick=\"showlist("+i+")\" class=\"list_btn\"></span></div><div class=\"playlist\" id=\"playlist"+i+"\">" + listhtml + "</div></div>";
+			listobj[i].innerHTML = "<div class=\"player_inc\"><div class=\"player_inner\"><span class=\"song_name\" id=\"song_name"+i+"\">"+playList[i][0][0]+" "+ playList[i][0][2] + "</span><span class=\"thisTime\" id=\"currentTime"+i+"\">00:00</span><span>/</span><span class=\"thisTime\" id=\"allTime"+i+"\">--:--</span><span onclick=\"play("+i+",-1)\" id=\"play"+i+"\" class=\"play_btn\"></span><span onclick=\"showlist("+i+")\" class=\"list_btn\"></span></div><div class=\"playlist\" id=\"playlist"+i+"\">" + listhtml + "</div></div>";
 		}
 	}
 	document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"http://timehub.cn/api/musicbox/musicbox.css\">");
