@@ -1,8 +1,6 @@
-body{
+#tagcloud {
 	font-family: Microsoft Yahei, Roboto, Arial, Droid Sans Fallback, Helvetica Neue, sans-serif;
 	text-align: center;
-}
-#tagcloud {
 	max-width: 300px;
 	margin: auto;
 	perspective: 800px;
@@ -12,6 +10,69 @@ body{
 	line-height: 30px;
 	height: 30px;
 }
+/*#tagcloud {
+	animation: fadeInOut 3s;
+	-moz-animation: fadeInOut 3s;	
+	-webkit-animation: fadeInOut 3s;	
+	-o-animation: fadeInOut 3s;	
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes fadeInOut {
+    0% {
+    	-webkit-transform:rotate(0deg);
+    	-moz-transform:rotate(0deg)
+    	transform:rotate(0deg);
+    }
+    80% {
+    	-webkit-transform:rotate(0deg);
+    	-moz-transform:rotate(0deg)
+    	transform:rotate(0deg);
+    }
+    85% {
+        -webkit-transform:translate(-10px,0);
+        -moz-transform:translate(-10px,0);
+        transform:translate(-10px,0);
+    }
+    90% {
+        -webkit-transform:translate(0px,0);
+        -moz-transform:translate(0px,0);
+        transform:translate(0px,0);
+    }
+    95% {
+        -webkit-transform:translate(-5px,0);
+        -moz-transform:translate(-5px,0);
+        transform:translate(-5px,0);
+    }
+}
+@keyframes fadeInOut {
+    0% {
+    	-webkit-transform:rotate(0deg);
+    	-moz-transform:rotate(0deg)
+    	transform:rotate(0deg);
+    }
+    80% {
+    	-webkit-transform:rotate(0deg);
+    	-moz-transform:rotate(0deg)
+    	transform:rotate(0deg);
+    }
+    85% {
+        -webkit-transform:translate(-10px,0);
+        -moz-transform:translate(-10px,0);
+        transform:translate(-10px,0);
+    }
+    90% {
+        -webkit-transform:translate(0px,0);
+        -moz-transform:translate(0px,0);
+        transform:translate(0px,0);
+    }
+    95% {
+        -webkit-transform:translate(-5px,0);
+        -moz-transform:translate(-5px,0);
+        transform:translate(-5px,0);
+    }
+}*/
 .tag-part a {
 	color: #ffffff;
 	text-decoration: none;
@@ -22,11 +83,14 @@ body{
 	white-space:nowrap;
 	text-overflow:ellipsis;
 	-o-text-overflow:ellipsis;
-	-webkit-transition:all 0.25s ease-in-out;
-	-moz-transition:all 0.25s ease-in-out
+	-webkit-transition:all 0.1s ease-in-out;
+	-moz-transition:all 0.1s ease-in-out
 }
 .tag-part a:hover {
-	transform: translateZ(80px);
+	transform: scale(1.2) rotateY(-30deg);
+	-o-transform: scale(1.2) rotateY(-30deg);
+	-webkit-transform: scale(1.2) rotateY(-30deg);
+	-moz-transform: scale(1.2) rotateY(-30deg);
 	box-shadow:0px 0px 18px #ffffff;
 }
 .color1{background: #ff294b;}

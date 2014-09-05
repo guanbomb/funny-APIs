@@ -1,5 +1,5 @@
 document.write('<link rel="stylesheet" type="text/css" href="http://timehub.cn/api/tagcloud/tagcloud.css">');
-document.write('<script type="text/javascript" src="http://timehub.cn/tags/"></script>');
+document.write('<script type="text/javascript" src="http://timehub.cn/tagcloud/"></script>');
 function parseTo(json) {
 	var str;
 	for(var i =0; i < json.length; i ++) {
@@ -14,6 +14,18 @@ function parseTo(json) {
 
 	}
 }
+// val('tagcloud').onmouseover = function() {
+// 	var obj = event.srcElement ? event.srcElement : event.target;
+// 	if(obj.title !== '' && obj.className.indexOf('tag-part-hover') === -1) {
+// 		obj.className += ' tag-part-hover';
+// 		if(obj.onmouseout === null) {
+// 			obj.onmouseout = function() {
+// 				obj.className = obj.className.replace(' tag-part-hover','');
+// 			};
+// 		}
+// 	}
+// }
+
 function val(obj){
 	return document.getElementById(obj);
 }
