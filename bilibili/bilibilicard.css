@@ -17,9 +17,10 @@
 	text-decoration: none;
 	color: #646464;
 	outline: 0;
+	display: inline-block;
 }
 .user-card .header {
-	padding: 3px 0 4px 57px;
+	padding: 3px 0 4px 0px;
 	min-height: 48px;
 }
 .user-card ul {
@@ -43,19 +44,28 @@
 	padding-left: 0;
 }
 .user-card img {
-	position: absolute;
-	top: 12px;
-	left: 12px;
-	width: 48px;
-	height: 48px;
+	margin-right: 5px;
+	float: left;
+	width: 48px!important;
+	height: 48px!important;
 	background: #fff;
 	border-radius: 4px;
+	margin-bottom: 0!important;
 }
 .user-card strong {
 	display: block;
 	color: #292f33;
 	font-size: 16px;
 	line-height: 1.6;
+}
+.avatar{
+	height: 48px;
+}
+.avatar strong {
+	float: left;
+}
+.avatar span {
+	display: block;
 }
 .user-card .status a {
 	color: #707070;
